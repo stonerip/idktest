@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Text;
+using System.IO;
 
 namespace Idktest
 {
@@ -45,17 +46,24 @@ namespace Idktest
 
 		public static void StartGame()
 		{
-			Process process = new Process();
-			process.StartInfo.RedirectStandardOutput = true;
-			process.StartInfo.RedirectStandardError = true;
-			process.StartInfo.UseShellExecute = false;
-			process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
-			process.StartInfo.CreateNoWindow = false;
-			process.StartInfo.FileName = "C:\\Program Files\\Java\\jre1.8.0_25\\bin\\java.exe";
-			process.StartInfo.Arguments = "-Xmx1024M -Xms1024M -jar jars\\minecraft.jar nogui";
-			process.Start();
-			while (process.HasExited == false) {
-				Console.Write (process.StandardOutput.ReadLine () + System.Environment.NewLine);
+			if (File.Exists("jars\\minecraft_server.jar")){
+				Process process = new Process();
+				process.StartInfo.RedirectStandardOutput = true;
+				process.StartInfo.RedirectStandardError = true;
+				process.StartInfo.UseShellExecute = false;
+				process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+				process.StartInfo.CreateNoWindow = false;
+				process.StartInfo.FileName = "C:\\Program Files\\Java\\jre1.8.0_25\\bin\\java.exe";
+				process.StartInfo.Arguments = "-Xmx1024M -Xms1024M -jar jars\\minecraft_server.jar nogui";
+				process.Start();
+				while (process.HasExited == false) {
+					Console.Write (process.StandardOutput.ReadLine () + System.Environment.NewLine);
+				}
+			}else{
+				Console.WriteLine("No minecraft_server.jar found.");
+				Console.WriteLine("Go download one or make sure the .jar is named minecraft_server.jar");
+				Console.WriteLine ("Press any key to continue....");
+				Console.ReadLine();
 			}
 		}
 	}
