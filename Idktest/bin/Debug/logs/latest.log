@@ -1,9 +1,19 @@
-[23:15:09] [Server thread/INFO]: Starting minecraft server version 1.8.1
-[23:15:09] [Server thread/INFO]: Loading properties
-[23:15:09] [Server thread/INFO]: Default game type: SURVIVAL
-[23:15:09] [Server thread/INFO]: Generating keypair
-[23:15:09] [Server thread/INFO]: Starting Minecraft server on *:25565
-[23:15:09] [Server thread/INFO]: Using default channel type
-[23:15:09] [Server thread/INFO]: Preparing level "world"
-[23:15:09] [Server thread/INFO]: Preparing start region for level 0
-[23:15:10] [Server thread/INFO]: Done (0.811s)! For help, type "help" or "?"
+[22:22:03] [Server thread/INFO]: Starting minecraft server version 1.8.1
+[22:22:03] [Server thread/INFO]: Loading properties
+[22:22:03] [Server thread/INFO]: Default game type: SURVIVAL
+[22:22:03] [Server thread/INFO]: Generating keypair
+[22:22:03] [Server thread/INFO]: Starting Minecraft server on *:25565
+[22:22:03] [Server thread/INFO]: Using default channel type
+[22:22:03] [Server thread/INFO]: Preparing level "world"
+[22:22:03] [Server thread/INFO]: Preparing start region for level 0
+[22:22:04] [Server thread/INFO]: Done (0.802s)! For help, type "help" or "?"
+[22:22:09] [Server thread/INFO]: Stopping the server
+[22:22:09] [Server thread/INFO]: Stopping server
+[22:22:09] [Server thread/INFO]: Saving players
+[22:22:09] [Server thread/INFO]: Saving worlds
+[22:22:09] [Server thread/INFO]: Saving chunks for level 'world'/Overworld
+[22:22:10] [Server thread/INFO]: Saving chunks for level 'world'/Nether
+[22:22:10] [Server thread/INFO]: Saving chunks for level 'world'/The End
+[22:22:10] [Server Shutdown Thread/INFO]: Stopping server
+[22:22:10] [Server Shutdown Thread/INFO]: Saving players
+[22:22:10] [Server Shutdown Thread/INFO]: Saving worlds

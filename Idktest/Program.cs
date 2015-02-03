@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Threading;
-using System.Text;
 using System.IO;
+using System.IO.Compression;
+using System.Text;
+
 
 namespace Idktest
 {
@@ -10,7 +11,7 @@ namespace Idktest
 	{
 		public static void Main (string[] args)
 		{
-			Console.Title = "Mein Server";
+			Console.Title = "Minecraft Server Wrappe";
 			Console.SetWindowSize (90, Console.WindowHeight);
 			while (true) {
 				Console.Clear ();
@@ -18,7 +19,7 @@ namespace Idktest
 				string line = Console.ReadLine();
 				if (line.ToLower () == "start") {
 					StartGame ();
-				} else if (line.ToLower () == "logs") {
+				} else if (line.ToLower () == "log") {
 					Process.Start (@"logs\\latest.log");
 				} else if (line.ToLower () == "config") {
 					Process.Start (@"server.properties");
@@ -27,9 +28,9 @@ namespace Idktest
 				} else if (line.ToLower () == "whitelist") {
 					Process.Start (@"whitelist.json");
 				} else if (line.ToLower() == "help"){
-					Console.WriteLine("Valid Options are :" + System.Environment.NewLine);
+					Console.WriteLine("\tValid Options are :" + System.Environment.NewLine);
 					Console.WriteLine("\t Start \t\t- Starts the server");
-					Console.WriteLine("\t logs \t\t- Opens the Latest server logs in your default Text Editor");
+					Console.WriteLine("\t log \t\t- Opens the Latest server logs in your default Text Editor");
 					Console.WriteLine("\t config \t- Opens the Server Configs in your default Text Editor");
 					Console.WriteLine("\t ops \t\t- Opens the ops Configs in your default Text Editor");
 					Console.WriteLine("\t whitelist \t- Opens the whitelist Configs in your default Text Editor" + System.Environment.NewLine);
@@ -57,7 +58,8 @@ namespace Idktest
 				process.StartInfo.Arguments = "-Xmx1024M -Xms1024M -jar jars\\minecraft_server.jar nogui";
 				process.Start();
 				while (process.HasExited == false) {
-					Console.Write (process.StandardOutput.ReadLine () + System.Environment.NewLine);
+					string Out = process.StandardOutput.ReadLine ();
+					Console.WriteLine (Out);
 				}
 			}else{
 				Console.WriteLine("No minecraft_server.jar found.");
