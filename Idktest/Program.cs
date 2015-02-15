@@ -90,10 +90,11 @@ namespace Idktest
 				Console.WriteLine(modName);
 				if (File.Exists ("mods\\" + modName)) {
 					File.Delete ("mods\\" + modName);
-					File.Move (modName, "mods\\" + modName);
+					File.Move ("update\\" +modName, "mods\\" + modName);
 					Console.WriteLine (modName + " Deleted and new one moved in. Moving it!");
 				} else {
 					Console.WriteLine (modName + " Does not exist. Moving it!");
+					File.Move ("update\\" +modName, "mods\\" + modName);
 				}
 			}
 			Console.WriteLine ("Press any key to continue....");
