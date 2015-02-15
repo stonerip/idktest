@@ -2,3 +2,7 @@ C:\Users\bsherow\Documents\Idktest\Idktest\bin\Debug\Idktest.exe
 C:\Users\bsherow\Documents\Idktest\Idktest\obj\x86\Debug\Idktest.pdb
 C:\Users\bsherow\Documents\Idktest\Idktest\bin\Debug\Idktest.pdb
 C:\Users\bsherow\Documents\Idktest\Idktest\obj\x86\Debug\Idktest.exe
+C:\Users\Bsherow\Desktop\idktest\Idktest\obj\x86\Debug\Idktest.exe
+C:\Users\Bsherow\Desktop\idktest\Idktest\bin\Debug\Idktest.exe
+C:\Users\Bsherow\Desktop\idktest\Idktest\bin\Debug\Idktest.pdb
+C:\Users\Bsherow\Desktop\idktest\Idktest\obj\x86\Debug\Idktest.pdb

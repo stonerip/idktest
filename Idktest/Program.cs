@@ -18,7 +18,7 @@ namespace Idktest
 				Console.WriteLine("What do you want to do?");
 				string line = Console.ReadLine();
 				if (line.ToLower () == "start") {
-					StartGame ();
+					UpdateMods();
 				} else if (line.ToLower () == "log") {
 					Process.Start (@"logs\\latest.log");
 				} else if (line.ToLower () == "config") {
@@ -67,6 +67,11 @@ namespace Idktest
 				Console.WriteLine ("Press any key to continue....");
 				Console.ReadLine();
 			}
+		}
+
+		public static void UpdateMods()
+		{
+			StartGame ();
 		}
 	}
 }
