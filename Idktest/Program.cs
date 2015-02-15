@@ -75,6 +75,11 @@ namespace Idktest
 
 		public static void ModCheck()
 		{
+			string[] files = Directory.GetFiles("update\\", "*.jar");
+			foreach (string file in filess) 
+			{
+				Console.WriteLine(file);
+			}
 			Console.WriteLine ("Press any key to continue....");
 			Console.ReadLine();
 			StartGame ();
