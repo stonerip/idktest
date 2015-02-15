@@ -90,14 +90,14 @@ namespace Idktest
 				Console.WriteLine(modName);
 				if (File.Exists ("mods\\" + modName)) {
 					File.Delete ("mods\\" + modName);
-					Console.WriteLine (modName + "Deleted and new one moved in. Moving it!");
+					File.Move (modName, "mods\\" + modName);
+					Console.WriteLine (modName + " Deleted and new one moved in. Moving it!");
 				} else {
-					Console.WriteLine (modName + "Does not exist. Moving it!");
+					Console.WriteLine (modName + " Does not exist. Moving it!");
 				}
 			}
 			Console.WriteLine ("Press any key to continue....");
 			Console.ReadLine();
-			StartGame ();
 		}
 	}
 }
