@@ -18,6 +18,7 @@ namespace Idktest
 				Console.WriteLine("What do you want to do?");
 				string line = Console.ReadLine();
 				if (line.ToLower () == "start") {
+					StartGame();
 					UpdateMods();
 				} else if (line.ToLower () == "log") {
 					Process.Start (@"logs\\latest.log");
@@ -54,7 +55,7 @@ namespace Idktest
 				process.StartInfo.UseShellExecute = false;
 				process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
 				process.StartInfo.CreateNoWindow = false;
-				process.StartInfo.FileName = "C:\\Program Files\\Java\\jre1.8.0_25\\bin\\java.exe";
+				process.StartInfo.FileName = "java.exe";
 				process.StartInfo.Arguments = "-Xmx1024M -Xms1024M -jar jars\\minecraft_server.jar nogui";
 				process.Start();
 				while (process.HasExited == false) {
@@ -71,7 +72,6 @@ namespace Idktest
 
 		public static void UpdateMods()
 		{
-			StartGame ();
 		}
 	}
 }
