@@ -37,14 +37,21 @@ namespace Idktest
 					Console.WriteLine ("Press any key to continue....");
 					Console.ReadLine();
 				} else if (line.ToLower() == "loop"){
-					StartGame ();
-					ModCheck ();
+					loopGame ();
 				} else {
 					Console.Clear ();
 					Console.WriteLine ("Please use an option i know!");
 					Console.WriteLine ("Press any key to continue....");
 					Console.ReadLine();
 				}
+			}
+		}
+
+		public static void loopGame()
+		{
+			while (true) {
+				StartGame ();
+				ModCheck ();
 			}
 		}
 
@@ -76,7 +83,7 @@ namespace Idktest
 		public static void ModCheck()
 		{
 			string[] files = Directory.GetFiles("update\\", "*.jar");
-			foreach (string file in filess) 
+			foreach (string file in files) 
 			{
 				Console.WriteLine(file);
 			}
