@@ -89,6 +89,10 @@ namespace Idktest
 				string modName = file.Substring (7);
 				Console.WriteLine(modName);
 				if (File.Exists ("mods\\" + modName)) {
+					File.Delete ("mods\\" + modName);
+					Console.WriteLine (modName + "Deleted and new one moved in. Moving it!");
+				} else {
+					Console.WriteLine (modName + "Does not exist. Moving it!");
 				}
 			}
 			Console.WriteLine ("Press any key to continue....");
