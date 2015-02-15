@@ -36,6 +36,9 @@ namespace Idktest
 					Console.WriteLine("\t whitelist \t- Opens the whitelist Configs in your default Text Editor" + System.Environment.NewLine);
 					Console.WriteLine ("Press any key to continue....");
 					Console.ReadLine();
+				} else if (line.ToLower() == "loop"){
+					StartGame ();
+					ModCheck ();
 				} else {
 					Console.Clear ();
 					Console.WriteLine ("Please use an option i know!");
@@ -54,17 +57,27 @@ namespace Idktest
 				process.StartInfo.UseShellExecute = false;
 				process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
 				process.StartInfo.CreateNoWindow = false;
-				process.StartInfo.FileName = "C:\\Program Files\\Java\\jre1.8.0_25\\bin\\java.exe";
+				process.StartInfo.FileName = "C:\\Program Files\\Java\\jdk1.8.0_11\\bin\\java.exe";
 				process.StartInfo.Arguments = "-Xmx1024M -Xms1024M -jar jars\\minecraft_server.jar nogui";
 				process.Start();
-				string result = process.StandardOutput.ReadToEnd();
-				Console.WriteLine(result);
+				while (process.HasExited == false) {
+					Console.Write (process.StandardOutput.ReadLine () + System.Environment.NewLine);
+					string Out = process.StandardOutput.ReadLine ();
+					Console.WriteLine (Out);
+				}
 			}else{
 				Console.WriteLine("No minecraft_server.jar found.");
 				Console.WriteLine("Go download one or make sure the .jar is named minecraft_server.jar");
 				Console.WriteLine ("Press any key to continue....");
 				Console.ReadLine();
 			}
+		}
+
+		public static void ModCheck()
+		{
+			Console.WriteLine ("Press any key to continue....");
+			Console.ReadLine();
+			StartGame ();
 		}
 	}
 }
