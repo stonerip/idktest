@@ -18,8 +18,7 @@ namespace Idktest
 				Console.WriteLine("What do you want to do?");
 				string line = Console.ReadLine();
 				if (line.ToLower () == "start") {
-					StartGame();
-					UpdateMods();
+					StartGame ();
 				} else if (line.ToLower () == "log") {
 					Process.Start (@"logs\\latest.log");
 				} else if (line.ToLower () == "config") {
@@ -55,23 +54,17 @@ namespace Idktest
 				process.StartInfo.UseShellExecute = false;
 				process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
 				process.StartInfo.CreateNoWindow = false;
-				process.StartInfo.FileName = "java.exe";
+				process.StartInfo.FileName = "C:\\Program Files\\Java\\jre1.8.0_25\\bin\\java.exe";
 				process.StartInfo.Arguments = "-Xmx1024M -Xms1024M -jar jars\\minecraft_server.jar nogui";
 				process.Start();
-				while (process.HasExited == false) {
-					string Out = process.StandardOutput.ReadLine ();
-					Console.WriteLine (Out);
-				}
+				string result = process.StandardOutput.ReadToEnd();
+				Console.WriteLine(result);
 			}else{
 				Console.WriteLine("No minecraft_server.jar found.");
 				Console.WriteLine("Go download one or make sure the .jar is named minecraft_server.jar");
 				Console.WriteLine ("Press any key to continue....");
 				Console.ReadLine();
 			}
-		}
-
-		public static void UpdateMods()
-		{
 		}
 	}
 }
